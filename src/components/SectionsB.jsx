@@ -3,7 +3,7 @@ import { Eyebrow, Star, AllSeeingEye, Sun, Triangle, CompassSquare } from './Pri
 
 export function Noticias({ content: c, symbolism }) {
   return (
-    <section id="noticias" className="section section--noticias">
+    <section id="noticias" className="section section--noticias reveal">
       <div className="section-header">
         <Eyebrow>{c.noticias.eyebrow}</Eyebrow>
         <h2 className="section-title">{c.noticias.title}</h2>
@@ -39,16 +39,16 @@ export function Biblioteca({ content: c }) {
   const covers = ['/assets/llibre.jpg', '/assets/ara.jpg', '/assets/ull.jpg', '/assets/compas3.jpg', '/assets/quadre.jpg', '/assets/mandil.jpg']
 
   return (
-    <section id="biblioteca" className="section section--biblioteca">
+    <section id="biblioteca" className="section section--biblioteca reveal">
       <div className="section-header">
         <Eyebrow>{c.biblioteca.eyebrow}</Eyebrow>
         <h2 className="section-title">{c.biblioteca.title}</h2>
         <p className="section-sub">{c.biblioteca.sub}</p>
       </div>
 
-      <div className="bib-grid">
+      <div className="bib-grid reveal">
         {c.biblioteca.items.map((b, i) => (
-          <article key={i} className="bib-card">
+          <article key={i} className="bib-card stagger-item">
             <div className="bib-cover">
               <img src={covers[i % covers.length]} alt="" loading="lazy" />
               <span className="bib-cat">{b.cat}</span>
@@ -69,7 +69,7 @@ export function FAQ({ content: c }) {
   const [open, setOpen] = useState(0)
 
   return (
-    <section id="faq" className="section section--faq">
+    <section id="faq" className="section section--faq reveal">
       <div className="faq-layout">
         <div className="faq-side">
           <Eyebrow>{c.faq.eyebrow}</Eyebrow>
@@ -120,7 +120,7 @@ export function Contacto({ content: c, symbolism, lang }) {
   }
 
   return (
-    <section id="contacto" className="section section--contacto">
+    <section id="contacto" className="section section--contacto reveal">
       <div className="cont-layout">
         <div className="cont-side">
           <Eyebrow>{c.contacto.eyebrow}</Eyebrow>

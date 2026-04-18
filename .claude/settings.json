@@ -1,4 +1,8 @@
 {
+  "env": {
+    "PROJECT_NAME": "Migdia",
+    "AZURE_TARGET": "static-web-app"
+  },
   "permissions": {
     "allow": [
       "Read",
@@ -23,8 +27,8 @@
     ],
     "deny": []
   },
-  "env": {
-    "PROJECT_NAME": "Migdia",
-    "AZURE_TARGET": "static-web-app"
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true
   }
 }

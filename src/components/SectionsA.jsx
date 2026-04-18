@@ -60,7 +60,7 @@ export function QuoteBlock({ content: c }) {
 
 export function Masoneria({ content: c, symbolism }) {
   return (
-    <section id="masoneria" className="section section--masoneria">
+    <section id="masoneria" className="section section--masoneria reveal">
       <div className="section-header">
         <Eyebrow>{c.masoneria.eyebrow}</Eyebrow>
         <h2 className="section-title">{c.masoneria.title}</h2>
@@ -83,9 +83,9 @@ export function Masoneria({ content: c, symbolism }) {
         </div>
       </div>
 
-      <div className="pillars">
+      <div className="pillars reveal">
         {c.masoneria.pillars.map((p, i) => (
-          <article key={i} className="pillar">
+          <article key={i} className="pillar stagger-item">
             <div className="pillar-head">
               <span className="pillar-num">{p.n}</span>
               {symbolism !== 'minimal' && <Triangle size={18} strokeWidth={1} />}
@@ -101,7 +101,7 @@ export function Masoneria({ content: c, symbolism }) {
 
 export function Historia({ content: c, symbolism }) {
   return (
-    <section id="historia" className="section section--historia">
+    <section id="historia" className="section section--historia reveal">
       <div className="historia-layout">
         <aside className="historia-side">
           <div className="section-header">
@@ -146,16 +146,16 @@ export function Principios({ content: c }) {
   ]
 
   return (
-    <section id="principios" className="section section--principios">
+    <section id="principios" className="section section--principios reveal">
       <div className="section-header centered">
         <Eyebrow>{c.principios.eyebrow}</Eyebrow>
         <h2 className="section-title">{c.principios.title}</h2>
         <p className="section-sub">{c.principios.sub}</p>
       </div>
 
-      <div className="prin-grid">
+      <div className="prin-grid reveal">
         {items.map((it, i) => (
-          <article key={i} className="prin-card">
+          <article key={i} className="prin-card stagger-item">
             <div className="prin-img"><img src={it.src} alt={it.t} loading="lazy" /></div>
             <div className="prin-body">
               <span className="prin-key">{it.k}</span>
