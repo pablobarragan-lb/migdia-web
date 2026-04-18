@@ -176,7 +176,9 @@ export function Contacto({ content: c, symbolism, lang }) {
   )
 }
 
-export function Footer({ content: c, symbolism }) {
+const LEGAL_KEYS = ['avisoLegal', 'privacidad', 'cookies']
+
+export function Footer({ content: c, symbolism, onLegalOpen }) {
   return (
     <footer className="site-footer">
       <div className="footer-top">
@@ -195,7 +197,9 @@ export function Footer({ content: c, symbolism }) {
       </div>
       <div className="footer-bottom">
         <div className="footer-legal">
-          {c.footer.legal.map((l, i) => <a key={i} href="#">{l}</a>)}
+          {c.footer.legal.map((l, i) => (
+            <button key={i} className="footer-legal-btn" onClick={() => onLegalOpen?.(LEGAL_KEYS[i])}>{l}</button>
+          ))}
         </div>
         <div className="footer-copy">
           © MMXXVI · {c.meta.email}

@@ -3,6 +3,7 @@ import { SITE_CONTENT } from './content'
 import { NavBar } from './components/Nav'
 import { Hero, QuoteBlock, Masoneria, Historia, Principios } from './components/SectionsA'
 import { Noticias, Biblioteca, FAQ, Contacto, Footer } from './components/SectionsB'
+import { CookieBanner, LegalModal } from './components/Legal'
 
 const load = (key, fallback) => {
   try {
@@ -17,6 +18,7 @@ export default function App() {
   const [symbolism, setSymbolism] = useState(() => load('symbolism', 'discrete'))
   const [section, setSection] = useState('inicio')
   const [scrolled, setScrolled] = useState(false)
+  const [legalPage, setLegalPage] = useState(null)
 
   useEffect(() => { try { localStorage.setItem('migdia_lang', lang) } catch {} }, [lang])
   useEffect(() => { try { localStorage.setItem('migdia_variant', variant) } catch {} }, [variant])
@@ -85,7 +87,9 @@ export default function App() {
         <FAQ content={content} />
         <Contacto content={content} symbolism={symbolism} lang={lang} />
       </main>
-      <Footer content={content} symbolism={symbolism} />
+      <Footer content={content} symbolism={symbolism} onLegalOpen={setLegalPage} />
+      <CookieBanner lang={lang} />
+      <LegalModal page={legalPage} lang={lang} onClose={() => setLegalPage(null)} />
     </>
   )
 }

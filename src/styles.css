@@ -1069,6 +1069,114 @@ p { text-wrap: pretty; }
 [data-variant="classic"] .section-title { font-weight: 500; }
 [data-variant="classic"] .btn { text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; }
 
+/* ============ COOKIE BANNER ============ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg-elev);
+  border-top: 1px solid var(--rule-strong);
+  padding: 18px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-size: 13px;
+  color: var(--fg-muted);
+  box-shadow: 0 -4px 20px var(--shadow-hover);
+}
+.cookie-banner p { max-width: 700px; line-height: 1.5; }
+.cookie-actions { flex-shrink: 0; }
+.btn-sm { padding: 8px 20px; font-size: 12px; }
+
+@media (max-width: 860px) {
+  .cookie-banner { flex-direction: column; text-align: center; gap: 14px; }
+}
+
+/* ============ LEGAL MODAL ============ */
+.legal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.legal-modal {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  max-width: 720px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+.legal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 1;
+}
+.legal-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 500;
+}
+.legal-close {
+  font-size: 28px;
+  color: var(--fg-muted);
+  padding: 4px 8px;
+  line-height: 1;
+}
+.legal-close:hover { color: var(--fg); }
+.legal-body {
+  padding: 28px 32px 36px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--fg);
+}
+.legal-body h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 28px 0 12px;
+}
+.legal-body h3:first-child { margin-top: 0; }
+.legal-body p { margin-bottom: 12px; color: var(--fg-muted); }
+.legal-body a { color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
+.legal-body a:hover { border-bottom-color: var(--accent); }
+.legal-body ul { margin: 8px 0 16px 20px; color: var(--fg-muted); }
+.legal-body li { margin-bottom: 6px; }
+.legal-body strong { color: var(--fg); font-weight: 500; }
+
+.footer-legal-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+  padding: 0;
+}
+.footer-legal-btn:hover { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .legal-modal { max-height: 90vh; }
+  .legal-header, .legal-body { padding-left: 20px; padding-right: 20px; }
+}
+
+@media print {
+  .cookie-banner, .legal-overlay { display: none !important; }
+}
+
 /* ============ ATMOSPHERE ============ */
 body::after {
   content: '';
