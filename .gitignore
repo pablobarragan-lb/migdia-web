@@ -39,6 +39,11 @@ logs/*.txt
 # Raw resources (too large for git)
 recursos/
 Migdia2026-handoff.zip
+Migdia2026-handoff/
 
 # Build artifacts
 .output/
+dist/
+
+# npm lock (rebuilt from package.json)
+package-lock.json
