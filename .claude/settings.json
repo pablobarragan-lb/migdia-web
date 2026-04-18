@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "Bash(git *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(python *)",
+      "mcp__azure-mcp__*",
+      "mcp__github__*",
+      "mcp__gemini__*",
+      "mcp__deepseek__*"
+    ],
+    "deny": []
+  },
+  "env": {
+    "PROJECT_NAME": "Migdia",
+    "AZURE_TARGET": "static-web-app"
+  }
+}

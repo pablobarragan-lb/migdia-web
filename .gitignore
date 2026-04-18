@@ -1,0 +1,44 @@
+# Credentials & secrets
+config/config.ini
+.env
+.env.*
+secrets/
+*.pem
+*.key
+
+# Claude Code local
+.claude/settings.local.json
+
+# Node
+node_modules/
+dist/
+.cache/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+desktop.ini
+.DS_Store
+
+# Logs
+logs/*.log
+logs/*.txt
+
+# Temp
+*.tmp
+*.bak
+
+# Raw resources (too large for git)
+recursos/
+Migdia2026-handoff.zip
+
+# Build artifacts
+.output/
